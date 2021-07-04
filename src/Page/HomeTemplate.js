@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 
 import { Route, Redirect, NavLink } from "react-router-dom";
-import Navbar from "../../../components/Navbar/Navbar";
+import { Modal, Button } from "antd";
+import imgType1 from "../assets/type1.PNG";
+import imgType2 from "../assets/type2.PNG";
+import imgType3 from "../assets/type3.PNG";
+import imgType4 from "../assets/type4.PNG";
+// import Navbar from "../../../components/Navbar/Navbar";
 import { Layout, Menu } from "antd";
 import {
   MenuUnfoldOutlined,
@@ -12,67 +17,91 @@ import {
   FireOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
-import "./index.css";
+// import "./index.css";
 
-export default function AdminTemplate({ Component, ...props }) {
+export default function HomeTemplate({ Component, ...props }) {
   const { Header, Sider, Content } = Layout;
   const { SubMenu } = Menu;
   const [collapsed, setCollapsed] = useState(false);
   const toggle = () => {
     setCollapsed(!collapsed);
   };
+
+  // start modal
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [imgExample, setImgExample] = useState(imgType1);
+
+  const handelSetImgExample = (value) => {
+    setImgExample(value);
+  };
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+  // end modal
+  console.log("window.location.pathname", window.location.pathname);
   return (
     <Route
       {...props}
       render={(propsComponent) => {
         return (
           <Layout style={{ minHeight: "100vh" }} className="relative z-50">
-            <Sider trigger={null} collapsible collapsed={collapsed}>
+            <Sider
+              style={
+                {
+                  // overflow: "auto",
+                  // height: "100vh",
+                  // position: "fixed",
+                  // left: 0,
+                }
+              }
+              trigger={null}
+              collapsible
+              collapsed={collapsed}
+              collapsedWidth={0}
+            >
               <div className="logo" />
-              <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-                <Menu.Item key="1" icon={<UserOutlined />}>
-                  <NavLink to="/admin" activeClassName="selected">
-                    Dashboard
+              <Menu
+                theme="dark"
+                mode="inline"
+                defaultSelectedKeys={["1"]}
+                className="font-medium rounded-sm ring-blue-400"
+              >
+                <Menu.Item key="1" className="">
+                  <NavLink to="/data/fill_inblank" activeClassName="selected">
+                    <i className="mr-3 fab fa-css3"></i>Fill_inblank
                   </NavLink>
                 </Menu.Item>
-                <SubMenu
-                  key="sub1"
-                  icon={<AppstoreOutlined />}
-                  title="Category"
-                >
-                  <Menu.Item key="3">
-                    <NavLink to="/admin-category/1" activeClassName="selected">
-                      <i className="mr-3 fab fa-css3"></i> CSS
-                    </NavLink>
-                  </Menu.Item>
-                  <Menu.Item key="4">
-                    <NavLink to="/admin-category/2" activeClassName="selected">
-                      <i className="mr-3 fab fa-js"></i> Javascript
-                    </NavLink>
-                  </Menu.Item>
-                  <Menu.Item key="5">
-                    <NavLink to="/admin-category/3" activeClassName="selected">
-                      <i className="mr-3 fab fa-react"></i> React
-                    </NavLink>
-                  </Menu.Item>
-                  <Menu.Item key="8">
-                    {" "}
-                    <NavLink to="/admin-category/4" activeClassName="selected">
-                      <i className="mr-3 fab fa-angular"></i> Angular
-                    </NavLink>
-                  </Menu.Item>
-                </SubMenu>
-                <Menu.Item key="6" icon={<UserOutlined />}>
-                  <NavLink to="/admin-users" activeClassName="selected">
-                    Users
+                <Menu.Item key="4">
+                  <NavLink
+                    to="/data/fill_inblank_html"
+                    activeClassName="selected"
+                  >
+                    <i className="mr-3 fab fa-js"></i> Fill_inblank_html
                   </NavLink>
                 </Menu.Item>
-                <Menu.Item key="7" icon={<ContactsOutlined />}>
-                  Enterprise
+                <Menu.Item key="8">
+                  {" "}
+                  <NavLink
+                    to="/data/fill_inblank_css"
+                    activeClassName="selected"
+                  >
+                    <i className="mr-3 fab fa-angular"></i>Fill_inblank_css
+                  </NavLink>
                 </Menu.Item>
-                <Menu.Item key="8" icon={<FireOutlined />}>
-                  <NavLink to="/admin-challenge" activeClassName="selected">
-                    Challenge
+                <Menu.Item key="5">
+                  <NavLink
+                    to="/data/multiple_choice"
+                    activeClassName="selected"
+                  >
+                    <i className="mr-3 fab fa-react"></i> Multiple_choice
                   </NavLink>
                 </Menu.Item>
               </Menu>
@@ -86,16 +115,42 @@ export default function AdminTemplate({ Component, ...props }) {
                     onClick: toggle,
                   }
                 )}
+
+                <>
+                  <Button
+                    className="bg-yellow-400 font-medium hover:text-blue-900"
+                    onClick={showModal}
+                  >
+                    View Example
+                  </Button>
+                  <Modal
+                    style={{ top: 20 }}
+                    className="w-4/5"
+                    title="Example"
+                    visible={isModalVisible}
+                    onOk={handleOk}
+                    onCancel={handleCancel}
+                    footer={[
+                      <Button key="submit" type="primary" onClick={handleOk}>
+                        Ok
+                      </Button>,
+                    ]}
+                  >
+                    <img className="w-full" src={imgExample} alt="" />
+                  </Modal>
+                </>
               </Header>
               <Content
                 className="site-layout-background "
                 style={{
-                  margin: "24px 16px",
-                  padding: 24,
+                  padding: 20,
                   minHeight: 280,
                 }}
               >
-                <Component {...propsComponent} />
+                <Component
+                  {...propsComponent}
+                  handelSetImgExample={handelSetImgExample}
+                />
               </Content>
             </Layout>
           </Layout>
