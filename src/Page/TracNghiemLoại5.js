@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import imgType1 from "../assets/type1.PNG";
+import imgType5 from "../assets/type5.PNG";
 import Editor from "../components/Editor";
 import { Button, Input } from "antd";
 
@@ -22,19 +22,19 @@ class TracNghiemLoai5 extends Component {
     let answers = this.state.answers;
 
     answers.push({
-      ma: 1,
+      ma: "1",
       noiDung: this.state.input1,
     });
     answers.push({
-      ma: 2,
+      ma: "2",
       noiDung: this.state.input2,
     });
     answers.push({
-      ma: 3,
+      ma: "3",
       noiDung: this.state.input3,
     });
     answers.push({
-      ma: 4,
+      ma: "4",
       noiDung: this.state.input4,
     });
     // console.log(answers);
@@ -42,7 +42,7 @@ class TracNghiemLoai5 extends Component {
     this.setState({ dataJson: JSON.stringify(answers) });
   };
   render() {
-    this.props.handelSetImgExample(imgType1);
+    this.props.handelSetImgExample(imgType5);
 
     return (
       //   <div className="w-full min-h-screen">
