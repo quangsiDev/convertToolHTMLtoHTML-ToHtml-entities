@@ -104,6 +104,14 @@ export default function HomeTemplate({ Component, ...props }) {
                     <i className="mr-3 fab fa-react"></i> Multiple_choice
                   </NavLink>
                 </Menu.Item>
+                <Menu.Item key="6">
+                  <NavLink
+                    to="/data/multiple_choice_2"
+                    activeClassName="selected"
+                  >
+                    <i className="mr-3 fab fa-react"></i> Multiple_choice 2
+                  </NavLink>
+                </Menu.Item>
               </Menu>
             </Sider>
             <Layout className="site-layout bg-content">

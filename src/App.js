@@ -10,31 +10,30 @@ import TracNghiemLoai2 from "./Page/TracNghiemLoai2";
 import TracNghiemLoai1 from "./Page/TracNghiemLoai1";
 import TracNghiemLoai3 from "./Page/TracNghiemLoai3";
 import TracNghiemLoai4 from "./Page/TracNghiemLoai4";
+import TracNghiemLoai5 from "./Page/TracNghiemLoại5";
 
 function App() {
-
   return (
     <BrowserRouter>
       <Switch>
         <HomeTemplate path="/" exact Component={TracNghiemLoai1} />
-        <HomeTemplate
-          path="/data/fill_inblank"
-          Component={TracNghiemLoai1}
-        />
+        <HomeTemplate path="/data/fill_inblank" Component={TracNghiemLoai1} />
         <HomeTemplate
           path="/data/fill_inblank_html"
           Component={TracNghiemLoai2}
         />
-         <HomeTemplate
+        <HomeTemplate
           Component={TracNghiemLoai3}
           path="/data/fill_inblank_css"
         />
         <HomeTemplate
           path="/data/multiple_choice"
           Component={TracNghiemLoai4}
-
         />
-       
+        <HomeTemplate
+          path="/data/multiple_choice_2"
+          Component={TracNghiemLoai5}
+        />
       </Switch>
     </BrowserRouter>
   );

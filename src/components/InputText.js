@@ -6,8 +6,8 @@ const { TextArea } = Input;
 
 const InputText = ({ handleChangeValueEditor }) => {
   const onChange = (e) => {
-    console.log("e", e);
-    console.log("defaultValueee", e.target.value);
+    // console.log("e", e);
+    // console.log("defaultValueee", e.target.value);
     // let value = e.currentTarget.defaultValue;
     handleChangeValueEditor(e.target.value);
   };

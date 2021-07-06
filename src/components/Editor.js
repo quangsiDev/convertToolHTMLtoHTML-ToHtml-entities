@@ -36,7 +36,7 @@ const Editor = () => {
   }
   const executeCodeHandle = () => {
     let result = eval(textCode);
-    console.log("result", result);
+    // console.log("result", result);
     setResult(result);
   };
   return (
