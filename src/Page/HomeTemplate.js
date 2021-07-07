@@ -81,19 +81,19 @@ export default function HomeTemplate({ Component, ...props }) {
                 </Menu.Item>
                 <Menu.Item key="4">
                   <NavLink
-                    to="/data/fill_inblank_html"
+                    to="/data/fill_inblank_html_css"
                     activeClassName="selected"
                   >
-                    <i className="mr-3 fab fa-js"></i> Fill_inblank_html
+                    <i className="mr-3 fab fa-js"></i> Fill_inblank_html_css
                   </NavLink>
                 </Menu.Item>
                 <Menu.Item key="8">
                   {" "}
                   <NavLink
-                    to="/data/fill_inblank_css"
+                    to="/data/fill_inblank_input"
                     activeClassName="selected"
                   >
-                    <i className="mr-3 fab fa-angular"></i>Fill_inblank_css
+                    <i className="mr-3 fab fa-angular"></i>Fill_inblank_input
                   </NavLink>
                 </Menu.Item>
                 <Menu.Item key="5">

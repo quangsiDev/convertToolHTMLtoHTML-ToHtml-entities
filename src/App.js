@@ -19,12 +19,12 @@ function App() {
         <HomeTemplate path="/" exact Component={TracNghiemLoai1} />
         <HomeTemplate path="/data/fill_inblank" Component={TracNghiemLoai1} />
         <HomeTemplate
-          path="/data/fill_inblank_html"
+          path="/data/fill_inblank_html_css"
           Component={TracNghiemLoai2}
         />
         <HomeTemplate
           Component={TracNghiemLoai3}
-          path="/data/fill_inblank_css"
+          path="/data/fill_inblank_input"
         />
         <HomeTemplate
           path="/data/multiple_choice"

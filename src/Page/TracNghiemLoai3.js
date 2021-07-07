@@ -6,9 +6,9 @@ export default class TracNghiemLoai3 extends Component {
   render() {
     this.props.handelSetImgExample(imgType3);
     return (
-      <div className="w-full h-screen flex flex-col">
+      <div className="w-full h-2/3 flex flex-col">
         <Editor />
-        <Editor />
+        {/* <Editor /> */}
       </div>
     );
   }
