@@ -11,6 +11,7 @@ export default class TracNghiemLoai2 extends Component {
         <div className="w-full h-screen flex flex-col">
           <Editor />
           <Editor />
+          <div>Link video hướng dẫn: <a href="https://www.youtube.com/watch?v=lpk8W_IBFwM" target="_blank" >https://www.youtube.com/watch?v=lpk8W_IBFwM </a> </div>
         </div>
       </div>
     );

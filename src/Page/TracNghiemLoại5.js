@@ -96,7 +96,9 @@ class TracNghiemLoai5 extends Component {
               {this.state.dataJson}
             </p>
           </div>
+        
         </div>
+        <div>Link video hướng dẫn: <a href="https://www.youtube.com/watch?v=CVwSqv4jA5A" target="_blank" >https://www.youtube.com/watch?v=CVwSqv4jA5A</a> </div>
       </div>
     );
   }

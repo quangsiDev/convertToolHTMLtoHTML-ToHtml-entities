@@ -9,6 +9,8 @@ class TracNghiemLoai1 extends Component {
     return (
       <div className="w-full h-3/4">
         <Editor />
+
+        <div>Link video hướng dẫn: <a href="https://www.youtube.com/watch?v=hvnk4P5imTU" target="_blank" >https://www.youtube.com/watch?v=hvnk4P5imTU </a> </div>
       </div>
     );
   }
